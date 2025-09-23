@@ -8,7 +8,7 @@
     "Ticket": {
       "address": "0xc8966abd81cab4d2f683449912ca72ac0057ad48",
       "constructorArgs": [
-        "Evvnt Tickets",
+        "EventX Tickets",
         "EVTX"
       ],
       "owner": "0x3BFbE4E3dCC472E9B1bdFC0c177dE3459Cf769bf"

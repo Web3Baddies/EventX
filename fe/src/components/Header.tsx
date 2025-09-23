@@ -20,7 +20,7 @@ export default function Header() {
                 <Image
                   className="h-24 w-auto"
                   src="/image.png"
-                  alt="Evvnt"
+                  alt="EventX"
                   width={96}
                   height={96}
                 />

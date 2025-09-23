@@ -1,4 +1,4 @@
-# 🎫 Evvnt — Transparent Web3 Ticketing Platform
+# 🎫 EventX — Transparent Web3 Ticketing Platform
 
 # contract address -— 0x6937de2Cd1Ad91C4EB7e86AC22ad92c5B89d678B
 
@@ -14,7 +14,7 @@
 [![Solidity](https://img.shields.io/badge/Solidity-^0.8.0-363636?logo=solidity)](https://soliditylang.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178c6?logo=typescript)](https://www.typescriptlang.org/)
 
-[🚀 Live Demo](https://www.loom.com/share/7d8bf1b0467b4f40b46415bf8e2ed813?sid=da87293c-0c8d-41a1-9c5e-79839fe82e50) • [🚀 Live Link](https://evvnt-fe.vercel.app/) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues)
+[🚀 Live Demo] • [🚀 Live Link](https://event-xd.vercel.app/) • [🐛 Report Bug](../../issues) • [💡 Request Feature](../../issues)
 
 </div>
 
@@ -23,7 +23,7 @@
 
 ## 🌟 Overview
 
-Evvnt revolutionizes event ticketing by putting tickets on the blockchain. Say goodbye to fraud, scalping, and unfair practices. Our platform ensures transparent pricing, instant transfers, and verifiable ownership for both organizers and attendees.
+EventX revolutionizes event ticketing by putting tickets on the blockchain. Say goodbye to fraud, scalping, and unfair practices. Our platform ensures transparent pricing, instant transfers, and verifiable ownership for both organizers and attendees.
 
 ### ✨ Key Features
 
@@ -94,8 +94,8 @@ graph TB
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/evvnt.git
-cd evvnt
+git clone https://github.com/web3baddies/EventX.git
+cd EventX
 
 # Install dependencies
 cd fe
@@ -136,7 +136,7 @@ PINATA_JWT=your_pinata_jwt_token_here
 
 ```mermaid
 journey
-    title Event Lifecycle on Evvnt
+    title Event Lifecycle on EventX
     section Organizer
       Create Event: 5: Organizer
       Set Price & Seats: 4: Organizer
@@ -156,7 +156,7 @@ journey
 ## 🏠 Project Structure
 
 ```
-evvnt/
+EventX/
 ├── fe/                          # Frontend Next.js application
 │   ├── public/                  # Static assets
 │   ├── src/
@@ -316,10 +316,10 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/evvnt?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/evvnt?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/evvnt)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/evvnt)
+![GitHub stars](https://img.shields.io/github/stars/yourusername/EventX?style=social)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/EventX?style=social)
+![GitHub issues](https://img.shields.io/github/issues/yourusername/EventX)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/EventX)
 
 </div>
 
@@ -340,7 +340,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**[⬆ Back to Top](#-evvnt--transparent-web3-ticketing-platform)**
+**[⬆ Back to Top](#-EventX--transparent-web3-ticketing-platform)**
 
 Made with ❤ for the decentralized future
 

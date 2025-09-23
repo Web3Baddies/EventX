@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="flex items-center">
               <Image 
                 src="/image.png" 
-                alt="Evvnt" 
+                alt="EventX" 
                 width={160} 
                 height={160} 
                 className="h-24 w-24 md:h-32 md:w-32 object-contain" 
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Evvnt. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} EventX. All rights reserved.</p>
         </div>
       </div>
     </footer>

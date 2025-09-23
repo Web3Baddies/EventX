@@ -207,7 +207,7 @@ export default function OrganizerDashboard({
                   <div className="ml-4">
                     <p className="text-sm font-medium text-purple-600">Total Revenue</p>
                     <p className="text-2xl font-bold text-purple-900">
-                      {(totalRevenue / 1e18).toFixed(4)} ETH
+                      {(totalRevenue / 1e18).toFixed(4)} TXDC
                     </p>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function OrganizerDashboard({
                         <div className="text-right">
                           <p className="text-sm text-gray-500">Sold</p>
                           <p className="font-semibold">{event.maxTickets - event.tickets}/{event.maxTickets}</p>
-                          <p className="text-sm text-green-600">{formatPrice(event.price)} ETH</p>
+                          <p className="text-sm text-green-600">{formatPrice(event.price)} TXDC</p>
                         </div>
                       </div>
                     </div>
@@ -309,7 +309,7 @@ export default function OrganizerDashboard({
                       )}
                       {/* Escrow */}
                       {typeof event.escrowBalance === 'bigint' && (
-                        <p className="text-xs text-gray-500">Escrow: {(Number(event.escrowBalance) / 1e18).toFixed(4)} ETH</p>
+                        <p className="text-xs text-gray-500">Escrow: {(Number(event.escrowBalance) / 1e18).toFixed(4)} TXDC</p>
                       )}
                     </div>
                     
@@ -573,7 +573,7 @@ export default function OrganizerDashboard({
                         </div>
                         <div className="flex justify-between text-sm text-gray-600">
                           <span>{event.maxTickets - event.tickets} sold of {event.maxTickets}</span>
-                          <span>Revenue: {((Number(event.price) * (event.maxTickets - event.tickets)) / 1e18).toFixed(4)} ETH</span>
+                          <span>Revenue: {((Number(event.price) * (event.maxTickets - event.tickets)) / 1e18).toFixed(4)} TXDC</span>
                         </div>
                       </div>
                     ))}

@@ -13,7 +13,7 @@ export default function AboutPage() {
         <div className="hero-overlay" />
         <div className="relative py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow">About Evvnt</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow">About EventX</h1>
             <p className="text-xl text-blue-100 drop-shadow">
               Secure, transparent event ticketing powered by blockchain
             </p>
@@ -37,14 +37,14 @@ export default function AboutPage() {
               <div className="max-w-3xl">
                 <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3 tracking-tight">Ticketing that’s simple, fair, and secure</h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Evvnt helps organizers sell out faster and gives attendees a fair, transparent way to get in.
+                  EventX helps organizers sell out faster and gives attendees a fair, transparent way to get in.
                   No fake tickets. No price gouging. Just smooth entry with instant verification.
                 </p>
               </div>
 
             </div>
 
-            {/* Why Evvnt (cyan cards) */}
+            {/* Why EventX (cyan cards) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="p-6 rounded-xl border border-cyan-100 bg-cyan-50">
                 <h4 className="text-xl font-semibold text-cyan-950 mb-2">Real tickets only</h4>
@@ -104,7 +104,7 @@ export default function AboutPage() {
 
             <div className="bg-white p-8 rounded-lg text-center border border-gray-200 shadow-sm">
               <h3 className="text-2xl font-bold text-black mb-4">Ready to get started?</h3>
-              <p className="text-gray-800 mb-6">Join thousands of users who trust Evvnt for secure, transparent event ticketing.</p>
+              <p className="text-gray-800 mb-6">Join thousands of users who trust EventX for secure, transparent event ticketing.</p>
               <Link 
                 href="/events" 
                 className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"

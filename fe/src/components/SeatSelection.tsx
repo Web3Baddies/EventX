@@ -114,7 +114,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
             <p className="text-gray-600">{event.location}</p>
             <div className="flex justify-between items-center mt-2">
               <p className="text-xl font-bold text-blue-600">
-                Price: {formatPrice(event.price)} ETH
+                Price: {formatPrice(event.price)} TXDC
               </p>
               <p className="text-sm text-green-600 font-medium">
                 {getTotalAvailable()} seats available
@@ -155,7 +155,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
                 Selected Seat: <strong>#{selectedSeat + 1}</strong>
               </p>
               <p className="text-blue-600 text-sm">
-                Total: {formatPrice(event.price)} ETH
+                Total: {formatPrice(event.price)} TXDC
               </p>
             </div>
           )}

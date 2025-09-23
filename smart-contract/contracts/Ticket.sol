@@ -379,7 +379,7 @@ function unlistTicket(uint256 tokenId) public onlyTicketOwner(tokenId) {
         TicketInfo storage t = ticketDetails[tokenId];
         Occassion storage o = occasions[t.occasionId];
 
-        string memory name = string(abi.encodePacked("Evvnt Ticket #", Strings.toString(tokenId)));
+        string memory name = string(abi.encodePacked("EventX Ticket #", Strings.toString(tokenId)));
         string memory desc = string(abi.encodePacked(
             "Event: ", o.title, " | Date: ", o.date, " ", o.time, " | Location: ", o.location,
             " | Seat: ", Strings.toString(t.seatNumber + 1)
@@ -452,7 +452,7 @@ function unlistTicket(uint256 tokenId) public onlyTicketOwner(tokenId) {
               '<text x="104" y="490" font-family="Segoe UI,Roboto,Arial" font-size="14" fill="#94a3b8">Location: ', o.location, '</text>',
               '<text x="104" y="520" font-family="Segoe UI,Roboto,Arial" font-size="16" font-weight="600" fill="', c1, '">Seat #', Strings.toString(t.seatNumber + 1), '</text>',
             '</g>',
-            '<text x="320" y="616" text-anchor="middle" font-family="Segoe UI,Roboto,Arial" font-size="12" fill="#94a3b8">Evvnt - On-chain Generative Ticket - #', Strings.toString(tokenId), '</text>',
+            '<text x="320" y="616" text-anchor="middle" font-family="Segoe UI,Roboto,Arial" font-size="12" fill="#94a3b8">EventX - On-chain Generative Ticket - #', Strings.toString(tokenId), '</text>',
             '</svg>'
         ));
 

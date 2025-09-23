@@ -35,7 +35,7 @@ async function main() {
     abi: ticketArtifact.abi,
     bytecode: ticketArtifact.bytecode as `0x${string}`,
     account: deployerClient.account,
-    args: ["Evvnt Tickets", "EVTX"],
+    args: ["EventX Tickets", "EVTX"],
   });
   
   const ticketReceipt = await publicClient.waitForTransactionReceipt({
@@ -62,7 +62,7 @@ async function main() {
     contracts: {
       Ticket: {
         address: ticketAddress,
-        constructorArgs: ["Evvnt Tickets", "EVTX"],
+        constructorArgs: ["EventX Tickets", "EVTX"],
         owner: owner
       }
     }
