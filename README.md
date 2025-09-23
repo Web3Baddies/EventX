@@ -126,9 +126,63 @@ NEXT_PUBLIC_RPC_URL=https://erpc.apothem.network
 
 # IPFS Configuration (Server-side only)
 PINATA_JWT=your_pinata_jwt_token_here
+
+# XDC Network Settings
+# Mainnet
+# XDC_RPC_URL=https://erpc.xinfin.network
+# XDC_CHAIN_ID=50
+
+# Apothem Testnet (default)
+XDC_RPC_URL=https://erpc.apothem.network
+XDC_CHAIN_ID=51
 ```
 
 > ⚠️ **Important**: Never commit real API keys to version control!
+
+---
+
+## 🔗 XDC Integration
+
+This project supports the XDC Network (EVM-compatible). We use the official `xdc3` SDK on the server-side for RPC calls, and you can continue using `wagmi`/`viem` on the client as usual.
+
+### Install
+
+```bash
+# From the frontend folder
+cd fe
+npm install xdc3
+```
+
+### Environment Variables
+
+Add these to `fe/.env.local` (or update existing values):
+
+```env
+# XDC Network Settings
+# Mainnet
+# XDC_RPC_URL=https://erpc.xinfin.network
+# XDC_CHAIN_ID=50
+
+# Apothem Testnet (default)
+XDC_RPC_URL=https://erpc.apothem.network
+XDC_CHAIN_ID=51
+```
+
+### Included Helpers & Test Route
+
+- Server helper: `fe/src/lib/xdc.ts`
+  - Exposes `getCurrentBlockNumber()` and reads `XDC_RPC_URL` / `XDC_CHAIN_ID`.
+- API route: `fe/src/app/api/xdc/height/route.ts`
+  - GET `/api/xdc/height` returns `{ network, chainId, rpcUrl, height }`.
+
+Usage (after starting the dev server):
+
+- Visit `http://localhost:3000/api/xdc/height` to verify connectivity.
+
+### Notes
+
+- The `xdc3` usage here is server-side to avoid bundling Node polyfills in the browser.
+- If you integrate XDC into your wallet flow, add XDC chains to your existing `wagmi`/RainbowKit config via `viem` chain definitions (Chain IDs: Mainnet `50`, Apothem `51`).
 
 ---
 
