@@ -6,12 +6,12 @@
   --background: #ffffff;
   --foreground: #171717;
   /* Brand palette from logo */
-  --brand-50: #E6FBFF;
-  --brand-200: #B4F2FF;
-  --brand-300: #7FE9FF;
-  --brand-500: #35D3E9;
-  --brand-600: #11C5E5;
-  --brand-700: #0FB1CD;
+--brand-50: #ECFDF5;   /* Very light green */
+--brand-200: #BBF7D0;  /* Light green */
+--brand-300: #86EFAC;  /* Medium-light green */
+--brand-500: #22C55E;  /* Main green */
+--brand-600: #16A34A;  /* Primary brand color */
+--brand-700: #15803D;  /* Dark green for hovers */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,25 +101,25 @@ body {
   background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.55), rgba(99,102,241,0.0) 60%);
 }
 
-/* Animated cyan gradient section */
-.animated-cyan {
+/* Animated green gradient section */
+.animated-green {
   position: relative;
   overflow: hidden;
 }
-.animated-cyan::before {
+.animated-green::before {
   content: "";
   position: absolute;
   inset: -25%;
   background: conic-gradient(from 180deg at 50% 50%,
-    rgba(207,250,254,0.85) 0deg,
-    rgba(165,243,252,0.85) 90deg,
-    rgba(191,219,254,0.85) 180deg,
-    rgba(165,243,252,0.85) 270deg,
-    rgba(207,250,254,0.85) 360deg);
+    rgba(220,252,231,0.85) 0deg,
+    rgba(187,247,208,0.85) 90deg,
+    rgba(134,239,172,0.85) 180deg,
+    rgba(187,247,208,0.85) 270deg,
+    rgba(220,252,231,0.85) 360deg);
   filter: blur(24px) saturate(1.05);
-  animation: cyanShift 24s ease-in-out infinite;
+  animation: greenShift 24s ease-in-out infinite;
 }
-.animated-cyan::after {
+.animated-green::after {
   /* subtle noise for texture */
   content: "";
   position: absolute;
@@ -128,7 +128,7 @@ body {
   pointer-events: none;
 }
 
-@keyframes cyanShift {
+@keyframes greenShift {
   0% { transform: rotate(0deg) scale(1); }
   50% { transform: rotate(180deg) scale(1.05); }
   100% { transform: rotate(360deg) scale(1); }

@@ -14,10 +14,10 @@ export default function AboutPage() {
         <div className="relative py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow">About EventX</h1>
-            <p className="text-xl text-blue-100 drop-shadow">
+            <p className="text-xl text-green-100 drop-shadow">
               Secure, transparent event ticketing powered by blockchain
             </p>
-            <p className="mt-4 text-lg md:text-xl text-blue-100 drop-shadow">
+            <p className="mt-4 text-lg md:text-xl text-green-100 drop-shadow">
               Real tickets only. Fair resale with caps. Instant QR check‑in. Own your access.
             </p>
             <div className="accent-bar" />
@@ -44,19 +44,19 @@ export default function AboutPage() {
 
             </div>
 
-            {/* Why EventX (cyan cards) */}
+            {/* Why EventX (green cards) */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="p-6 rounded-xl border border-cyan-100 bg-cyan-50">
-                <h4 className="text-xl font-semibold text-cyan-950 mb-2">Real tickets only</h4>
-                <p className="text-cyan-900/80">Every ticket is unique and verifiable at the door.</p>
+              <div className="p-6 rounded-xl border border-green-100 bg-green-50">
+                <h4 className="text-xl font-semibold text-green-950 mb-2">Real tickets only</h4>
+                <p className="text-green-900/80">Every ticket is unique and verifiable at the door.</p>
               </div>
-              <div className="p-6 rounded-xl border border-cyan-100 bg-cyan-50">
-                <h4 className="text-xl font-semibold text-cyan-950 mb-2">Fair resale</h4>
-                <p className="text-cyan-900/80">Set caps and keep pricing under control.</p>
+              <div className="p-6 rounded-xl border border-green-100 bg-green-50">
+                <h4 className="text-xl font-semibold text-green-950 mb-2">Fair resale</h4>
+                <p className="text-green-900/80">Set caps and keep pricing under control.</p>
               </div>
-              <div className="p-6 rounded-xl border border-cyan-100 bg-cyan-50">
-                <h4 className="text-xl font-semibold text-cyan-950 mb-2">Instant check‑in</h4>
-                <p className="text-cyan-900/80">Fast QR verification equals smooth entry.</p>
+              <div className="p-6 rounded-xl border border-green-100 bg-green-50">
+                <h4 className="text-xl font-semibold text-green-950 mb-2">Instant check‑in</h4>
+                <p className="text-green-900/80">Fast QR verification equals smooth entry.</p>
               </div>
             </div>
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <p className="text-gray-800 mb-6">Join thousands of users who trust EventX for secure, transparent event ticketing.</p>
               <Link 
                 href="/events" 
-                className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
               >
                 Explore Events
               </Link>

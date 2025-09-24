@@ -96,14 +96,14 @@ export default function EventsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section (Animated Cyan) */}
-      <section className="animated-cyan">
+      {/* Hero Section (Animated Green) */}
+      <section className="animated-green">
         <div className="relative py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               Secure Event Ticketing
               <br />
-              <span className="text-cyan-700">On The Blockchain</span>
+              <span className="text-green-700">On The Blockchain</span>
             </h2>
             <p className="text-xl md:text-2xl mb-8 text-gray-700">
               Discover and secure your tickets with transparency and security
@@ -153,8 +153,8 @@ export default function EventsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>

@@ -152,7 +152,7 @@ export default function LocationPicker({ onLocationSelect, initialLocation }: Lo
           type="text"
           value={address}
           onChange={handleAddressChange}
-          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
           placeholder="Search for a location or click on the map"
         />
         <p className="text-xs text-gray-500 mt-1">
@@ -169,7 +169,7 @@ export default function LocationPicker({ onLocationSelect, initialLocation }: Lo
       {!isLoaded && (
         <div className="w-full h-64 rounded-lg border border-gray-300 flex items-center justify-center bg-gray-50">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600 mx-auto mb-2"></div>
             <p className="text-sm text-gray-500">Loading map...</p>
           </div>
         </div>

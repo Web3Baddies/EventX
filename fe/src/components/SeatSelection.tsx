@@ -72,7 +72,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
                 : isReserved
                 ? 'bg-yellow-500 text-white cursor-not-allowed'
                 : isSelected
-                ? 'bg-blue-600 text-white'
+                ? 'bg--600 text-white'
                 : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
               }
             `}
@@ -113,7 +113,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
             <p className="text-gray-600">{event.date} at {event.time}</p>
             <p className="text-gray-600">{event.location}</p>
             <div className="flex justify-between items-center mt-2">
-              <p className="text-xl font-bold text-blue-600">
+              <p className="text-xl font-bold text-green-600">
                 Price: {formatPrice(event.price)} TXDC
               </p>
               <p className="text-sm text-green-600 font-medium">
@@ -139,7 +139,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
                 <span>Available</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                <div className="w-4 h-4 bg-green-600 rounded"></div>
                 <span>Selected</span>
               </div>
               <div className="flex items-center gap-2">
@@ -150,11 +150,11 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
           </div>
 
           {selectedSeat !== null && (
-            <div className="bg-blue-50 p-4 rounded-lg mb-6">
-              <p className="text-blue-800">
+            <div className="bg-green-50 p-4 rounded-lg mb-6">
+              <p className="text-green-800">
                 Selected Seat: <strong>#{selectedSeat + 1}</strong>
               </p>
-              <p className="text-blue-600 text-sm">
+              <p className="text-green-600 text-sm">
                 Total: {formatPrice(event.price)} TXDC
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function SeatSelection({ event, onConfirm, onCancel, isLoading }:
             <button
               onClick={handleConfirm}
               disabled={selectedSeat === null || isLoading}
-              className="flex-1 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {isLoading ? 'Processing...' : 'Confirm Purchase'}
             </button>

@@ -45,14 +45,14 @@ export default function HowItWorksSlider({ intervalMs = 4000, slides: customSlid
   }, [intervalMs, slides.length]);
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-cyan-50 border border-cyan-100">
+    <div className="relative rounded-2xl overflow-hidden bg-green-50 border border-green-100">
       {/* Progress bar */}
-      <div className="absolute top-0 left-0 h-1 bg-cyan-300" style={{ width: `${((index + 1) / slides.length) * 100}%` }} />
+      <div className="absolute top-0 left-0 h-1 bg-green-300" style={{ width: `${((index + 1) / slides.length) * 100}%` }} />
 
       <div className="p-8 md:p-10 min-h-[200px]">
         <div className="transition-all duration-300">
-          <h4 className="text-xl md:text-2xl font-semibold text-cyan-950 mb-2">{slides[index].title}</h4>
-          <p className="text-cyan-900/80">{slides[index].description}</p>
+          <h4 className="text-xl md:text-2xl font-semibold text-green-950 mb-2">{slides[index].title}</h4>
+          <p className="text-green-900/80">{slides[index].description}</p>
         </div>
       </div>
 
@@ -64,11 +64,11 @@ export default function HowItWorksSlider({ intervalMs = 4000, slides: customSlid
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => goTo(i)}
-              className={`h-2.5 rounded-full transition-all ${i === index ? 'w-8 bg-cyan-600' : 'w-2.5 bg-cyan-200 hover:bg-cyan-300'}`}
+              className={`h-2.5 rounded-full transition-all ${i === index ? 'w-8 bg-green-600' : 'w-2.5 bg-green-200 hover:bg-green-300'}`}
             />
           ))}
         </div>
-        <div className="text-xs text-cyan-900/60 pr-1">{index + 1} / {slides.length}</div>
+        <div className="text-xs text-green-900/60 pr-1">{index + 1} / {slides.length}</div>
       </div>
     </div>
   );
