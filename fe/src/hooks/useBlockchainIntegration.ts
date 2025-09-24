@@ -27,11 +27,26 @@ interface UseBlockchainIntegrationReturn {
 }
 
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || CONTRACT_CONFIG.address;
-const ORGANIZER_FEE = '1000000000000'; // 0.000001 ETH in wei
+const ORGANIZER_FEE = '1000000000000000'; // 0.001 ETH in wei
 
 export const useBlockchainIntegration = (): UseBlockchainIntegrationReturn => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Check if wallet is connected to the correct network
+  const checkNetwork = useCallback(async () => {
+    if (!window.ethereum) {
+      throw new Error('MetaMask is not installed');
+    }
+
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const network = await provider.getNetwork();
+    const expectedChainId = CONTRACT_CONFIG.chainId;
+    
+    if (Number(network.chainId) !== expectedChainId) {
+      throw new Error(`Wrong network! Please switch to XDC Apothem Testnet (Chain ID: ${expectedChainId}). Currently connected to Chain ID: ${network.chainId}`);
+    }
+  }, []);
 
   // Signer-based contract (requires wallet) for write operations
   const getContract = useCallback(async () => {
@@ -39,10 +54,13 @@ export const useBlockchainIntegration = (): UseBlockchainIntegrationReturn => {
       throw new Error('MetaMask is not installed');
     }
 
+    // Check network before proceeding
+    await checkNetwork();
+
     const provider = new ethers.BrowserProvider(window.ethereum);
     const signer = await provider.getSigner();
     return new ethers.Contract(CONTRACT_ADDRESS, TICKET_CONTRACT_ABI, signer);
-  }, []);
+  }, [checkNetwork]);
 
   // Read-only contract via public RPC so UI works without wallet connection
   const getReadContract = useCallback(() => {
@@ -80,7 +98,7 @@ export const useBlockchainIntegration = (): UseBlockchainIntegrationReturn => {
         maxResalePriceInWei,
         eventTimestamp,
         {
-          value: ethers.parseUnits(organizerFee, 'wei')
+          value: BigInt(organizerFee)
         }
       );
 

@@ -10,6 +10,7 @@ export default function WalletConnect({ onConnect }: WalletConnectProps) {
   const [account, setAccount] = useState<string>('');
   const [isConnecting, setIsConnecting] = useState(false);
   const [error, setError] = useState<string>('');
+  const [isClient, setIsClient] = useState(false);
 
   const connectWallet = async () => {
     setError('');
@@ -64,29 +65,58 @@ export default function WalletConnect({ onConnect }: WalletConnectProps) {
   };
 
   useEffect(() => {
-    // Check if wallet is already connected
+    // Set client flag to prevent hydration mismatch
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    // Check if wallet is already connected and unlocked
     const checkConnection = async () => {
-      if (typeof window !== 'undefined' && window.ethereum) {
+      if (isClient && window.ethereum) {
         try {
+          // Force a fresh check by requesting accounts (this will fail if locked)
           const accounts = await window.ethereum.request({ 
             method: 'eth_accounts' 
           });
           
           if (accounts && accounts.length > 0) {
-            setAccount(accounts[0]);
-            onConnect?.(accounts[0]);
+            // Double-check by trying to get the current network
+            // This will throw an error if MetaMask is locked
+            try {
+              const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+              console.log('Wallet connected and unlocked:', accounts[0], 'Chain:', chainId);
+              setAccount(accounts[0]);
+              onConnect?.(accounts[0]);
+            } catch {
+              // MetaMask is locked - this is the key check
+              console.log('MetaMask is locked or inaccessible');
+              setAccount('');
+              onConnect?.('');
+            }
+          } else {
+            // No accounts available
+            console.log('No accounts found');
+            setAccount('');
+            onConnect?.('');
           }
         } catch (error) {
           console.error('Error checking wallet connection:', error);
+          setAccount('');
+          onConnect?.('');
         }
       }
     };
 
+    // Run check immediately and also set up a periodic check
     checkConnection();
+    
+    // Check every 3 seconds to detect MetaMask lock/unlock
+    const interval = setInterval(checkConnection, 3000);
 
-    // Listen for account changes
-    if (typeof window !== 'undefined' && window.ethereum) {
+    // Listen for account changes and connection events
+    if (isClient && window.ethereum) {
       const handleAccountsChanged = (accounts: string[]) => {
+        console.log('Accounts changed:', accounts);
         if (accounts.length > 0) {
           setAccount(accounts[0]);
           onConnect?.(accounts[0]);
@@ -97,13 +127,41 @@ export default function WalletConnect({ onConnect }: WalletConnectProps) {
         }
       };
 
+      const handleConnect = (connectInfo: { chainId: string }) => {
+        console.log('MetaMask connected:', connectInfo);
+        checkConnection(); // Re-check connection when MetaMask connects
+      };
+
+      const handleDisconnect = () => {
+        console.log('MetaMask disconnected');
+        setAccount('');
+        setError('');
+        onConnect?.('');
+      };
+
       window.ethereum.on?.('accountsChanged', handleAccountsChanged);
+      window.ethereum.on?.('connect', handleConnect);
+      window.ethereum.on?.('disconnect', handleDisconnect);
 
       return () => {
+        clearInterval(interval);
         window.ethereum?.removeListener?.('accountsChanged', handleAccountsChanged);
+        window.ethereum?.removeListener?.('connect', handleConnect);
+        window.ethereum?.removeListener?.('disconnect', handleDisconnect);
       };
     }
-  }, [onConnect]);
+
+    return () => clearInterval(interval);
+  }, [onConnect, isClient]);
+
+  // Prevent hydration mismatch by not rendering until client-side
+  if (!isClient) {
+    return (
+      <div className="px-6 py-2 btn-brand rounded-lg opacity-50">
+        Loading...
+      </div>
+    );
+  }
 
   if (account) {
     return (
