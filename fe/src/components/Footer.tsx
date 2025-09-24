@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center">
               <Image 
-                src="/image.png" 
+                src="/logo.png" 
                 alt="EventX" 
                 width={160} 
                 height={160} 

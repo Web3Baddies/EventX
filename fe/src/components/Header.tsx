@@ -19,7 +19,7 @@ export default function Header() {
               <Link href="/">
                 <Image
                   className="h-24 w-auto"
-                  src="/image.png"
+                  src="/logo.png"
                   alt="EventX"
                   width={96}
                   height={96}

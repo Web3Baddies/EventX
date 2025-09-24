@@ -101,7 +101,7 @@ function VerifyClient() {
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <Image src="/image.png" alt="EventX" width={80} height={80} className="h-20 w-20 object-contain" />
+                <Image src="/logo.png" alt="EventX" width={80} height={80} className="h-20 w-20 object-contain" />
               </Link>
               <span className="ml-2 text-sm text-gray-500">Verify Ticket</span>
             </div>

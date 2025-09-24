@@ -8,16 +8,14 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gray-50">
 
       {/* Hero Section */}
-      <section className="hero-section text-white">
-        <div className="hero-bg" />
-        <div className="hero-overlay" />
+      <section className="animated-green text-gray-900">
         <div className="relative py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow">About EventX</h1>
-            <p className="text-xl text-green-100 drop-shadow">
+            <p className="text-xl text-gray-700 drop-shadow">
               Secure, transparent event ticketing powered by blockchain
             </p>
-            <p className="mt-4 text-lg md:text-xl text-green-100 drop-shadow">
+            <p className="mt-4 text-lg md:text-xl text-gray-700 drop-shadow">
               Real tickets only. Fair resale with caps. Instant QR check‑in. Own your access.
             </p>
             <div className="accent-bar" />
